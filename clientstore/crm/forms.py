@@ -1,0 +1,8 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import get_user_model, forms
+
+from crm.models import Order
+
+User = get_user_model()
+
+
