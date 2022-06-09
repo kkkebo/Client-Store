@@ -1,8 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import get_user_model, forms
+from django import forms
 
-from crm.models import Order
 
-User = get_user_model()
-
+class OrderForm(forms.Form):
+    name = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    phone = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
