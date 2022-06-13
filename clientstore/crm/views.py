@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -29,6 +30,8 @@ def index(request):
 
 
 def thanks_page(request):
+    if not request.POST:
+        raise Http404()
     name = request.POST['name']
     email = request.POST['email']
     phone = request.POST['phone']
